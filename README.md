@@ -14,4 +14,13 @@ Possible Topics to Analyze:
     4. A color-coded map or chart that demonstrates the properties by "property class code". Each code has a detailed description of the type of property so that we can visualize the type of properties that are distributed throughout Indianapolis. 
     5. A map that shows the townships throughout Indy by using the "township number" data
 
+Inspiration and Final Design Sketch: We have included images for inspiration as well as a very minimal sketch of what the final dashboard will look like in the images folder within this GitHub repository. 
 
+Requirements: 
+    
+    1. Include a Python Flask-powered RESTful API, HTML/CSS, JavaScript, and at least one database (SQL, MongoDB, SQLite, etc)
+    2. A dashboard page with multiple charts that update from the same data 
+    3. Include at least one JS library that we did not cover 
+    4. Powered by a dataset with at least 100 records 
+    5. Must include some level of user-driven interaction ( menus, dropdowns, textboxes)
+    6. Have at least 3 views. 
