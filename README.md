@@ -14,6 +14,12 @@ Possible Topics to Analyze:
     4. A color-coded map or chart that demonstrates the properties by "property class code". Each code has a detailed description of the type of property so that we can visualize the type of properties that are distributed throughout Indianapolis. 
     5. A map that shows the townships throughout Indy by using the "township number" data
 
+Visualizations: 
+    - Map w/ dropdown - property class codes grouped together
+    - Heat Map - Property value 
+    - Map - Color coded by neighborhood 
+    - Bar Chart - Side walks 
+    
 Inspiration and Final Design Sketch: We have included images for inspiration as well as a very minimal sketch of what the final dashboard will look like in the images folder within this GitHub repository. 
 
 Requirements: 
