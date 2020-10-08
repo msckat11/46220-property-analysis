@@ -22,6 +22,13 @@ Visualizations:
     
 Inspiration and Final Design Sketch: We have included images for inspiration as well as a very minimal sketch of what the final dashboard will look like in the images folder within this GitHub repository. 
 
+Group Tasks: 
+    - Nathan - Find latitude and longitude for zip codes and powerpoint
+    - Tim - Making SQL database and hosting API 
+    - Katie - Pick the Javascript library and map color coded by neighborhood
+    - Helena - HTML/CSS and map w/dropdown for property class codes grouped together 
+    - Jackson - Create heat map with product value 
+    
 Requirements: 
     
     1. Include a Python Flask-powered RESTful API, HTML/CSS, JavaScript, and at least one database (SQL, MongoDB, SQLite, etc)
