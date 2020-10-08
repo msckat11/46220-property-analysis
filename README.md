@@ -15,18 +15,20 @@ Possible Topics to Analyze:
     5. A map that shows the townships throughout Indy by using the "township number" data
 
 Visualizations: 
-    1. Map w/ dropdown - property class codes grouped together
+    1. Bar chart- property class codes
     2. Heat Map - Property value 
     3. Map - Color coded by neighborhood 
     4. Bar Chart - Side walks 
     
+Dashboard Page - update the page via property code 
+
 Inspiration and Final Design Sketch: We have included images for inspiration as well as a very minimal sketch of what the final dashboard will look like in the images folder within this GitHub repository. 
 
 Group Tasks: 
     - Nathan - Find latitude and longitude for zip codes and powerpoint
     - Tim - Making SQL database and hosting API 
     - Katie - Pick the Javascript library and map color coded by neighborhood
-    - Helena - HTML/CSS and map w/dropdown for property class codes grouped together 
+    - Helena - HTML/CSS and bar chart for property class codes
     - Jackson - Create heat map with product value 
     
 Requirements: 
