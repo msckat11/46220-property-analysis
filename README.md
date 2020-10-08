@@ -15,10 +15,10 @@ Possible Topics to Analyze:
     5. A map that shows the townships throughout Indy by using the "township number" data
 
 Visualizations: 
-    - Map w/ dropdown - property class codes grouped together
-    - Heat Map - Property value 
-    - Map - Color coded by neighborhood 
-    - Bar Chart - Side walks 
+    1. Map w/ dropdown - property class codes grouped together
+    2. Heat Map - Property value 
+    3. Map - Color coded by neighborhood 
+    4. Bar Chart - Side walks 
     
 Inspiration and Final Design Sketch: We have included images for inspiration as well as a very minimal sketch of what the final dashboard will look like in the images folder within this GitHub repository. 
 
