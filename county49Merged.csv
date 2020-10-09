@@ -1,4 +1,4 @@
-Latitude,LongitudeAddress,City,ZIP Code,Township,Property Class Code,Neighborhood ID,Date Last Transferred,Sidewalks,Total Adj Value,Owner State,Owner ZIP Code
+Latitude,Longitude,Address,City,ZIP Code,Township,Property Class Code,Neighborhood ID,Date Last Transferred,Sidewalks,Total Adj Value,Owner State,Owner ZIP Code
 39.883206,-86.085364,4854 E 71ST ST,INDIANAPOLIS,46220,0008,511,817077170,08/21/2008,N,246400,IN,46220
 39.877214,-86.146015,6675 N COLLEGE AV,INDIANAPOLIS,46220,0008,550,824272150,06/20/2017,N,140200,IN,46220
 39.878909,-86.111849,6709 N OAKLAND AV,INDIANAPOLIS,46220,0008,510,801765120,,N,261100,IN,46220
