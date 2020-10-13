@@ -1,0 +1,21 @@
+.navbar-custom {
+  background-color: #031d44;
+}
+.navbar-brand {
+  color: white;
+}
+.col-md-12 {
+  background-color: #04395e;
+  color: white;
+}
+
+.body {
+  background-color: whitesmoke;
+  font-family: fantasy;
+  font-variant: small-caps;
+}
+
+.well {
+  background-color: #337ab7;
+  color: black;
+}
