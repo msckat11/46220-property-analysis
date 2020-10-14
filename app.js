@@ -17,7 +17,7 @@ function init() {
     var groups = ["100's", "200's", "300's", "400's", "500's", "600's", "800's"]
     
     // read in the data 
-    d3.csv("new_names.csv").then(function(data) {
+    d3.csv("static/csv/new_names.csv").then(function(data) {
         console.log(data);
         // convert the column from string to integer
         data.forEach(function(d){ d['propertyclasscode'] = +d['propertyclasscode']});
@@ -93,18 +93,6 @@ function init() {
     });
 }
 
-// get unique values of each array 
-
-function removeDuplicates(array) {
-    var unique = []
-    array.map(x => {
-        if (!unique.includes(x)) {
-        (unique.push(x));
-      }
-    })
-    console.log(unique)
-  };
-  removeDuplicates(fiveHundreds)
 
 // function to change plot based on dropdown choice 
 d3.selectAll("#selDataset").on("change", updatePlotly);
@@ -157,3 +145,59 @@ function updatePlotly() {
 
     }
 init();
+
+
+// pull in data for sidewalks for fun 
+// read in the data 
+
+var yesSidewalks = []
+var noSidewalks = []
+
+d3.csv("new_names.csv").then(function(data) {
+    console.log(data)
+
+    for (var i = 0; i < data.length; i++) {
+        var sidewalk = data[i].sidewalks;
+
+        if(sidewalk == "Y"){
+            yesSidewalks.push(sidewalk);
+        }
+
+        if(sidewalk == "N") {
+            noSidewalks.push(sidewalk);
+        }
+    }
+});
+
+// bar chart using chart.js
+var ctx = document.getElementById('myChart').getContext('2d');
+          var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+              labels: ['Y', 'N'],
+              datasets: [{
+                label: 'Are there sidewalks?',
+                data: [1, 1505],
+                backgroundColor: [
+                    'rgba(54, 162, 235, 0.2)',
+                  'rgba(255, 99, 132, 0.2)',
+                ],
+                borderColor: [
+                    'rgba(54, 162, 235, 1)',
+                  'rgba(255, 99, 132, 1)',
+                ],
+                borderWidth: 1
+              }]
+            },
+            options: {
+              scales: {
+                yAxes: [{
+                  ticks: {
+                    beginAtZero: true
+                  }
+                }]
+              }
+            }
+          });
+
+          
