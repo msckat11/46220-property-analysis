@@ -12,48 +12,54 @@ L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     accessToken: API_KEY
   }).addTo(myMap);
 
-var data = [{
-    location: [39.871616, -86.130249],
-    value: 100000,
-    address: "My House"
-  },
-  {
-    location: [39.9, -86.2],
-    value: 10000000,
-    address: "My House"
-  }];
 
-for (var i = 0; i < data.length; i++) {
+
+d3.csv("county49Merged.csv").then(function(data) {
+
+  // Print the tvData
+  console.log(data);
+
+    for (var i = 0; i < data.length; i++) {
 
     var buildings = data[i];
 
-    if (buildings.value <= 75000) {
-    L.marker(buildings.location, {icon: redIcon})
-    .bindPopup("<h1>" + buildings.value + "</h1> <hr> <h3>Address: " + buildings.address + "</h3>")
+    var location = [];
+
+    parseFloat(buildings.Latitude);
+    parseFloat(buildings.Longitude);
+
+    location.push(buildings.Latitude);
+    location.push(buildings.Longitude);
+
+    console.log(location)
+
+    if (buildings.Total_Adj_Value <= 75000) {
+    L.marker(location, {icon: redIcon})
+    .bindPopup("<h1>" + "$"+ buildings.Total_Adj_Value + "</h1> <hr> <h3>Address: " + buildings.Address + "</h3>")
     .addTo(myMap);
     }
 
-    if (buildings.value > 75000 & buildings.value < 200000) {
-        L.marker(buildings.location, {icon:yellowIcon})
-        .bindPopup("<h1>" + buildings.value + "</h1> <hr> <h3>Address: " + buildings.address + "</h3>")
+    if (buildings.Total_Adj_Value > 75000 & buildings.Total_Adj_Value < 200000) {
+        L.marker(location, {icon:yellowIcon})
+        .bindPopup("<h1>" + "$"+ buildings.Total_Adj_Value + "</h1> <hr> <h3>Address: " + buildings.Address + "</h3>")
         .addTo(myMap);
     }
 
-    if (buildings.value > 200000 & buildings.value < 750000) {
-        L.marker(buildings.location, {icon:greenIcon})
-        .bindPopup("<h1>" + buildings.value + "</h1> <hr> <h3>Address: " + buildings.address + "</h3>")
+    if (buildings.Total_Adj_Value > 200000 & buildings.Total_Adj_Value < 750000) {
+        L.marker(location, {icon:greenIcon})
+        .bindPopup("<h1>" + "$"+ buildings.Total_Adj_Value + "</h1> <hr> <h3>Address: " + buildings.Address + "</h3>")
       .addTo(myMap);
     }
 
-    if (buildings.value > 750000) {
-      L.marker(buildings.location, {icon:goldIcon})
-      .bindPopup("<h1>" + buildings.value + "</h1> <hr> <h3>Address: " + buildings.address + "</h3>")
-    .addTo(myMap);
+    if (buildings.Total_Adj_Value > 750000) {
+      L.marker(location, {icon:goldIcon})
+      .bindPopup("<h1>" + "$"+ buildings.Total_Adj_Value + "</h1> <hr> <h3>Address: " + buildings.Address + "</h3>")
+    .addTo(myMap);}
   }
         
-    };
+    
 
-
+  });
 
 
    
