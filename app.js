@@ -180,11 +180,11 @@ return [a, b];
 var yesSidewalks = []
 var noSidewalks = []
 
-d3.csv("new_names.csv").then(function(data) {
-console.log(data)
+d3.json(url).then(function(data) {
+  data = JSON.parse(data);
 
 for (var i = 0; i < data.length; i++) {
-    var sidewalk = data[i].sidewalks;
+    var sidewalk = data[i][9];
 
     if(sidewalk == "Y"){
         yesSidewalks.push(sidewalk);
