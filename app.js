@@ -93,7 +93,7 @@ function init() {
     });
 }
 
-
+console.log(oneHundreds.count)
 // function to change plot based on dropdown choice 
 d3.selectAll("#selDataset").on("change", updatePlotly);
 
@@ -107,36 +107,48 @@ function updatePlotly() {
     // initialize the arrays to be used 
     var x = []
     var y = []
+    var dataArray;
 
     if (dataset === "one") {
-        x = [100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110];
-        y = oneHundreds.count;
+        // x = [100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110];
+        // y = oneHundreds.count;
+        dataArray = oneHundreds;
     }
 
     if (dataset === "two") {
-        x = [200]
-        y = twoHundreds.count;
+        // x = [200]
+        // y = twoHundreds.count;
+        dataArray = twoHundreds;
     }
     if (dataset === "three") {
-        x = [320, 330, 345, 350, 360, 370, 380, 385, 390, 398, 399]
-        y = threeHundreds.count;
+        // x = [320, 330, 345, 350, 360, 370, 380, 385, 390, 398, 399]
+        // y = threeHundreds.count;
+        dataArray = threeHundreds;
     }
     if (dataset === "four") {
-        x = [419, 422, 425, 429, 431, 442, 444, 447, 454, 480, 481, 499];
-        y = fourHundreds.count;
+        // x = [419, 422, 425, 429, 431, 442, 444, 447, 454, 480, 481, 499];
+        // y = fourHundreds.count;
+        dataArray = fourHundreds;
     }
     if (dataset === "five") {
-        x = [500, 501, 505, 510, 511, 520, 521, 530, 540, 550, 599];
-        y = fiveHundreds.count;
+        // x = [500, 501, 505, 510, 511, 520, 521, 530, 540, 550, 599];
+        // y = fiveHundreds.count;
+        dataArray = fiveHundreds;
     }
     if (dataset === "six") {
-        x = [600, 610, 620, 630, 640, 650, 660, 670, 680, 686];
-        y = sixHundreds.count;
+        // x = [600, 610, 620, 630, 640, 650, 660, 670, 680, 686];
+        // y = sixHundreds.count;
+        dataArray = sixHundreds;
     }
     if (dataset === "eight") {
-        x = [800, 805, 810, 815, 820, 830, 840, 850, 860, 870, 875];
-        y = eightHundreds.count;
+        // x = [800, 805, 810, 815, 820, 830, 840, 850, 860, 870, 875];
+        // y = eightHundreds.count;
+        dataArray = eightHundreds;
     }
+
+    var results = countOccurrences(dataArray);
+    x = results[0];
+    y = results[1];
 
     // restyle the graph based on the dropdown selection 
     Plotly.restyle("bar", "x", [x]);
@@ -146,8 +158,24 @@ function updatePlotly() {
     }
 init();
 
+function countOccurrences(arr) {
+  var a = [], b = [], prev;
+  
+  arr.sort();
+  for ( var i = 0; i < arr.length; i++ ) {
+      if ( arr[i] !== prev ) {
+          a.push(arr[i]);
+          b.push(1);
+      } else {
+          b[b.length-1]++;
+      }
+      prev = arr[i];
+  }
+  
+  return [a, b];
+}
 
-// pull in data for sidewalks for fun 
+// pull in data for sidewalks - for fun 
 // read in the data 
 
 var yesSidewalks = []
