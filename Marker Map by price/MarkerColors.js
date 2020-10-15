@@ -1,5 +1,3 @@
-
-
 var goldIcon = new L.Icon({
 	iconUrl: 'Marker Map by price/img/marker-icon-2x-gold.png',
 	shadowUrl: 'Marker Map by price/img/marker-shadow.png',
