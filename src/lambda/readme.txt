@@ -5,5 +5,6 @@ A SQLite file was not generated for the purpose of this project, but the data us
 
 A "SELECT *" clause is used to pull all of the data from the Redshift server.
 To view this JSON data directly, go to the following URL:
-
 https://fzykzc9iqf.execute-api.us-east-2.amazonaws.com/Test01
+
+The lambda function requires the psycopg2 module. This module allows a remote connection to be made to a database using its name, host, port, authorized username, and password.
