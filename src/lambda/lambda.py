@@ -1,9 +1,11 @@
 import psycopg2
 import json as js
+import config
 
 def lambda_handler(event,handler):
     
-    conn = psycopg2.connect(dbname = 'properties',host='tmarlett-bc-properties.cfndam6vn2fk.us-east-2.redshift.amazonaws.com',port='5439',user='tmarlett',password='5309Tnj!')
+    # Connects to the database
+    conn = psycopg2.connect(dbname = 'properties',host='tmarlett-bc-properties.cfndam6vn2fk.us-east-2.redshift.amazonaws.com',port='5439',user=config.user,password=config.password)
     cur = conn.cursor()
     query = "SELECT * FROM properties"
     cur.execute(query)
