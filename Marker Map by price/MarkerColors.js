@@ -1,6 +1,6 @@
 var goldIcon = new L.Icon({
-	iconUrl: 'static/Marker Map by price/img/marker-icon-2x-gold.png',
-	shadowUrl: 'static/Marker Map by price/img/marker-shadow.png',
+	iconUrl: 'Marker Map by price/img/marker-icon-2x-gold.png',
+	shadowUrl: 'Marker Map by price/img/marker-shadow.png',
 	iconSize: [25, 41],
 	iconAnchor: [12, 41],
 	popupAnchor: [1, -34],
@@ -8,8 +8,8 @@ var goldIcon = new L.Icon({
 });
 
 var redIcon = new L.Icon({
-	iconUrl: 'static/Marker Map by price/img/marker-icon-2x-red.png',
-	shadowUrl: 'static/Marker Map by price/img/marker-shadow.png',
+	iconUrl: 'Marker Map by price/img/marker-icon-2x-red.png',
+	shadowUrl: 'Marker Map by price/img/marker-shadow.png',
 	iconSize: [25, 41],
 	iconAnchor: [12, 41],
 	popupAnchor: [1, -34],
@@ -17,8 +17,8 @@ var redIcon = new L.Icon({
 });
 
 var greenIcon = new L.Icon({
-	iconUrl: 'static/Marker Map by price/img/marker-icon-2x-green.png',
-	shadowUrl: 'static/Marker Map by price/img/marker-shadow.png',
+	iconUrl: 'Marker Map by price/img/marker-icon-2x-green.png',
+	shadowUrl: 'Marker Map by price/img/marker-shadow.png',
 	iconSize: [25, 41],
 	iconAnchor: [12, 41],
 	popupAnchor: [1, -34],
@@ -27,8 +27,8 @@ var greenIcon = new L.Icon({
 
 
 var yellowIcon = new L.Icon({
-	iconUrl: 'static/Marker Map by price/img/marker-icon-2x-yellow.png',
-	shadowUrl: 'static/Marker Map by price/img/marker-shadow.png',
+	iconUrl: 'Marker Map by price/img/marker-icon-2x-yellow.png',
+	shadowUrl: 'Marker Map by price/img/marker-shadow.png',
 	iconSize: [25, 41],
 	iconAnchor: [12, 41],
 	popupAnchor: [1, -34],

@@ -18,7 +18,6 @@ var groups = ["100's", "200's", "300's", "400's", "500's", "600's", "800's"]
 // read in the data 
 d3.json(url).then(function(data) {
     data = JSON.parse(data);
-    console.log(data);
     // convert the column from string to integer
 
         for (var i = 0; i < data.length; i++) {
@@ -91,7 +90,6 @@ d3.json(url).then(function(data) {
     Plotly.newPlot("bar", plotData, layout);
 });
 }
-console.log(fiveHundreds)
 
 // function to change plot based on dropdown choice 
 d3.selectAll("#selDataset").on("change", updatePlotly);
@@ -180,11 +178,11 @@ return [a, b];
 var yesSidewalks = []
 var noSidewalks = []
 
-d3.csv("new_names.csv").then(function(data) {
-console.log(data)
+d3.json(url).then(function(data) {
+  data = JSON.parse(data);
 
 for (var i = 0; i < data.length; i++) {
-    var sidewalk = data[i].sidewalks;
+    var sidewalk = data[i][9];
 
     if(sidewalk == "Y"){
         yesSidewalks.push(sidewalk);
