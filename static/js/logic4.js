@@ -1,7 +1,7 @@
 // Creating map object
-var myMap = L.map("map", {
-    center: [39.8687, -86.1341],
-    zoom: 12
+var indyMap = L.map("myMap", {
+    center: [39.8660, -86.1050],
+    zoom: 13
 });
 // Adding tile layer
 L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
@@ -11,35 +11,51 @@ L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     zoomOffset: -1,
     id: "mapbox/streets-v11",
     accessToken: API_KEY
-}).addTo(myMap);
-// Use this link to get the geojson data.
+}).addTo(indyMap);
+
+// Use these links to get the geojson data.
 var link = "https://xmaps.indy.gov/arcgis/rest/services/OpenData/OpenData_Boundaries/MapServer/10/query?outFields=*&where=1%3D1&f=geojson";
-// Function that will determine the color of a neighborhood based on the borough it belongs to
+var source = "Zip_Code_Boundaries.geojson"
+
+// Function that will color neighborhoods
 function chooseColor(neighborhood) {
     switch (neighborhood) {
         case "Broad Ripple":
             return "yellow";
-        case "Butler-Tarkington/Rocky Ripple":
-            return "red";
         case "Glendale":
             return "orange";
         case "Meridian Kessler":
             return "green";
         case "Canterbury-Chatard":
-            return "purple";
+            return "red";
         case "Allisonville":
             return "blue";
         case "Devonshire":
             return "pink";
         case "Millersville":
             return "cyan";
+        case "North Central":
+            return "purple";
+        case "Meridian Hills/Williams Creek":
+            return "pink";
+        case "Ravenswood":
+            return "cyan";
+        case "Clearwater":
+            return "green";
+        case "I-69/Fall Creek":
+            return "yellow";
+        case "Devon":
+            return "purple";
         default:
             return "black";
     }
 }
-// Grabbing our GeoJSON data..
-d3.json(link, function (data) {
+
+
+// Grabbing our GeoJSON data on neighborhoods.
+d3.json(link).then(function (data) {
     // Creating a geoJSON layer with the retrieved data
+    console.log(data)
     L.geoJson(data, {
         // Style each feature (in this case a neighborhood)
         style: function (features) {
@@ -51,31 +67,23 @@ d3.json(link, function (data) {
                 weight: 1.5
             };
         },
-        // Called on each feature
-        onEachFeature: function (feature, layer) {
-            // Set mouse events to change map styling
-            layer.on({
-                // When a user's mouse touches a map feature, the mouseover event calls this function, that feature's opacity changes to 90% so that it stands out
-                mouseover: function (event) {
-                    layer = event.target;
-                    layer.setStyle({
-                        fillOpacity: 0.9
-                    });
-                },
-                // When the cursor no longer hovers over a map feature - when the mouseout event occurs - the feature's opacity reverts back to 50%
-                mouseout: function (event) {
-                    layer = event.target;
-                    layer.setStyle({
-                        fillOpacity: 0.5
-                    });
-                },
-                // When a feature (neighborhood) is clicked, it is enlarged to fit the screen
-                click: function (event) {
-                    myMap.fitBounds(event.target.getBounds());
-                }
-            });
-            // Giving each feature a pop-up with information pertinent to it
-            layer.bindPopup("<h1>" + feature.properties.neighborhood + "</h1> <hr> <h2>" + feature.properties.borough + "</h2>");
-        }
-    }).addTo(myMap);
+    }).addTo(indyMap);
+});
+
+// Grabbing our GeoJSON data for the 46220 zip code.
+d3.json(source).then(function (data) {
+    // Creating a geoJSON layer with the retrieved data
+    // console.log(data)
+    // if features.properties.ZIPCODE === 46220
+    L.geoJson(data, {
+        // Style each feature (in this case a neighborhood)
+        style: function (features) {
+            return {
+                color: "red",
+                // Call the chooseColor function to decide which color to color our neighborhood (color based on borough)
+                fillColor: chooseColor(features.properties.ZIPCODE),
+                weight: 3
+            };
+        },
+    }).addTo(indyMap);
 });
