@@ -22,7 +22,7 @@ d3.json(url).then(function(data)
 data = JSON.parse(data);
 
 // Print the tvData
-// console.log(data);
+console.log(data);
 
   for (var i = 0; i < data.length; i++) {
 
@@ -36,7 +36,7 @@ data = JSON.parse(data);
   location.push(buildings[0]);
   location.push(buildings[1]);
 
-  // console.log(location)
+  console.log(location)
 
   if (buildings[10] <= 75000) {
   L.marker(location, {icon: redIcon})
@@ -62,7 +62,23 @@ data = JSON.parse(data);
   .addTo(myMap);}
 }
       
+var legend = L.control({ position: "bottomleft" });
+
+legend.onAdd = function(map) {
+  var div = L.DomUtil.create("div", "legend");
+  div.innerHTML += "<h4>Prices of Properties</h4>";
+  div.innerHTML += '<i style="background: #FF0000"></i><span>Less than $75K</span><br>';
+  div.innerHTML += '<i style="background: #FFF380"></i><span>Between $75K and $200K</span><br>';
+  div.innerHTML += '<i style="background: #008000"></i><span>Between $200K and  $750K</span><br>';
+  div.innerHTML += '<i style="background: #FFFF00"></i><span>More than $750K</span><br>';
   
+  
+  
+
+  return div;
+};
+
+legend.addTo(myMap); 
 
 });
 
