@@ -22,7 +22,7 @@ d3.json(url).then(function(data)
 data = JSON.parse(data);
 
 // Print the tvData
-console.log(data);
+// console.log(data);
 
   for (var i = 0; i < data.length; i++) {
 
@@ -36,7 +36,7 @@ console.log(data);
   location.push(buildings[0]);
   location.push(buildings[1]);
 
-  console.log(location)
+  // console.log(location)
 
   if (buildings[10] <= 75000) {
   L.marker(location, {icon: redIcon})

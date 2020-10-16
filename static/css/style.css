@@ -19,6 +19,9 @@
   color: black;
 }
 
+#heading {
+  background-color: #337ab7;
+}
 /* remove default margin and padding from body */
 body {
   padding: 0;
