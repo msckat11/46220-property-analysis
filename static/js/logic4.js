@@ -82,7 +82,7 @@ d3.json(source).then(function (data) {
                 color: "red",
                 // Call the chooseColor function to decide which color to color our neighborhood (color based on borough)
                 fillColor: chooseColor(features.properties.ZIPCODE),
-                weight: 3
+                weight: 6
             };
         },
     }).addTo(indyMap);

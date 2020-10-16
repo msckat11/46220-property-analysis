@@ -49,6 +49,11 @@ body {
 #map {
   height: 600px;
 }
+
+#myMap {
+  height: 600px;
+}
+
 .legend {
   padding: 6px 8px;
   font: 14px Arial, Helvetica, sans-serif;
