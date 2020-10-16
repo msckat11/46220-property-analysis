@@ -36,7 +36,7 @@ console.log(data);
   location.push(buildings[0]);
   location.push(buildings[1]);
 
-  console.log(location)
+  // console.log(location)
 
   if (buildings[10] <= 75000) {
   L.marker(location, {icon: redIcon})
