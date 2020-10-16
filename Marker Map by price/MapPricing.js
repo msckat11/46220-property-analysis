@@ -22,7 +22,7 @@ d3.json(url).then(function(data)
 data = JSON.parse(data);
 
 // Print the tvData
-// console.log(data);
+console.log(data);
 
   for (var i = 0; i < data.length; i++) {
 
@@ -36,29 +36,29 @@ data = JSON.parse(data);
   location.push(buildings[0]);
   location.push(buildings[1]);
 
-  // console.log(location)
+  console.log(location)
 
   if (buildings[10] <= 75000) {
   L.marker(location, {icon: redIcon})
-  .bindPopup("<h1>" + "$"+ buildings[10] + "</h1> <hr> <h3>Address: " + buildings.address + "</h3>")
+  .bindPopup("<h1>" + "$"+ buildings[10] + "</h1> <hr> <h3>Address: " + buildings[2] + "</h3>")
   .addTo(myMap);
   }
 
   if (buildings[10] > 75000 & buildings[10] < 200000) {
       L.marker(location, {icon:yellowIcon})
-      .bindPopup("<h1>" + "$"+ buildings[10] + "</h1> <hr> <h3>Address: " + buildings.address + "</h3>")
+      .bindPopup("<h1>" + "$"+ buildings[10] + "</h1> <hr> <h3>Address: " + buildings[2] + "</h3>")
       .addTo(myMap);
   }
 
   if (buildings[10] > 200000 & buildings[10] < 750000) {
       L.marker(location, {icon:greenIcon})
-      .bindPopup("<h1>" + "$"+ buildings[10] + "</h1> <hr> <h3>Address: " + buildings.address + "</h3>")
+      .bindPopup("<h1>" + "$"+ buildings[10] + "</h1> <hr> <h3>Address: " + buildings[2] + "</h3>")
     .addTo(myMap);
   }
 
   if (buildings[10] > 750000) {
     L.marker(location, {icon:goldIcon})
-    .bindPopup("<h1>" + "$"+ buildings[10] + "</h1> <hr> <h3>Address: " + buildings.address + "</h3>")
+    .bindPopup("<h1>" + "$"+ buildings[10] + "</h1> <hr> <h3>Address: " + buildings[2] + "</h3>")
   .addTo(myMap);}
 }
       
