@@ -40,25 +40,25 @@ console.log(data);
 
   if (buildings[10] <= 75000) {
   L.marker(location, {icon: redIcon})
-  .bindPopup("<h1>" + "$"+ buildings[10] + "</h1> <hr> <h3>Address: " + buildings[2] + "</h3>")
+  .bindPopup("<h1>" + "$"+ buildings[10] + "</h1> <hr> <h3>Address: " + buildings[2] + "</h3>" + " <hr> <h4>Property Class Code: " + buildings[6] + "</h4>") 
   .addTo(myMap);
   }
 
   if (buildings[10] > 75000 & buildings[10] < 200000) {
       L.marker(location, {icon:yellowIcon})
-      .bindPopup("<h1>" + "$"+ buildings[10] + "</h1> <hr> <h3>Address: " + buildings[2] + "</h3>")
+      .bindPopup("<h1>" + "$"+ buildings[10] + "</h1> <hr> <h3>Address: " + buildings[2] + "</h3>" + " <hr> <h4>Property Class Code: " + buildings[6] + "</h4>")
       .addTo(myMap);
   }
 
   if (buildings[10] > 200000 & buildings[10] < 750000) {
       L.marker(location, {icon:greenIcon})
-      .bindPopup("<h1>" + "$"+ buildings[10] + "</h1> <hr> <h3>Address: " + buildings[2] + "</h3>")
+      .bindPopup("<h1>" + "$"+ buildings[10] + "</h1> <hr> <h3>Address: " + buildings[2] + "</h3>" + " <hr> <h4>Property Class Code: " + buildings[6] + "</h4>")
     .addTo(myMap);
   }
 
   if (buildings[10] > 750000) {
     L.marker(location, {icon:goldIcon})
-    .bindPopup("<h1>" + "$"+ buildings[10] + "</h1> <hr> <h3>Address: " + buildings[2] + "</h3>")
+    .bindPopup("<h1>" + "$"+ buildings[10] + "</h1> <hr> <h3>Address: " + buildings[2] + "</h3>" + " <hr> <h4>Property Class Code: " + buildings[6] + "</h4>")
   .addTo(myMap);}
 }
       
